@@ -48,7 +48,7 @@ export class Circle implements Figure {
   getArea(): number {
     const val = Math.PI * Math.pow(this.radius, 2);
 
-    return Math.floor(val);
+    return Math.floor(val * 100) / 100;
   }
 }
 
@@ -68,11 +68,10 @@ export class Rectangle implements Figure {
   getArea(): number {
     const val = this.a * this.b;
 
-    return Math.floor(val);
+    return Math.floor(val * 100) / 100;
   }
 }
 
 export function getInfo(figure: Figure): string {
-  // return typeof figure;
   return `A ${figure.color} ${figure.shape} - ${figure.getArea()}`;
 }
